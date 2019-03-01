@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/all.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Swedbank Task</title>
+  </head>
+  <body>
+    <form>
+      <span class="error-message"></span>
+      <div class="form__question question-one checked">
+        <h3 class="form__question--title">Type of Account</h3>
+        <div class="form__input-field">
+          <input
+            class="form__checked"
+            type="radio"
+            name="type"
+            id="personal"
+            value="personal"
+          />
+          <label for="personal">Personal</label>
+          <input
+            class="form__checked"
+            type="radio"
+            name="type"
+            id="business"
+            value="business"
+          />
+          <label for="business">Business</label>
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+      <div class="form__question question-two  inactive">
+        <h3 class="form__question--title">Category</h3>
+        <div class="form__input-field options">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <select name="question2" id="account-plan" required> </select>
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+      <div class="form__question question-three inactive">
+        <h3 class="form__question--title">Name of Department</h3>
+        <div class="form__input-field">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <input
+            name="question3"
+            type="text"
+            placeholder="e.g. Insurance, Loans"
+            required
+          />
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+      <div class="form__question question-four inactive">
+        <h3 class="form__question--title">Question Title</h3>
+        <div class="form__input-field">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <input
+            name="question4"
+            type="text"
+            placeholder="e.g. current rates"
+            required
+          />
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+      <div class="form__question question-three inactive">
+        <h3 class="form__question--title">Additional Information</h3>
+        <div class="form__input-field">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <textarea
+            name="question5"
+            placeholder="comments and details"
+            required
+          ></textarea>
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+    </form>
+
+    <section id="summary"></section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
