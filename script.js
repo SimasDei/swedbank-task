@@ -42,7 +42,6 @@ function questionHandler() {
       const nextQuestion = parent.nextElementSibling;
       const personal = elements.personal;
       const business = elements.business;
-      console.log(parent);
 
       if (parent.classList.contains('checked')) {
         switch (true) {
