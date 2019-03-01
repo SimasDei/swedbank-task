@@ -39,8 +39,34 @@ body {
   display: flex;
 }
 
+.form__input-field label {
+  font-size: 27px;
+  font-weight: 200;
+  align-items: center;
+  color: #fff;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.form__input-field label:hover,
+.form__input-field label:active {
+  font-weight: 500;
+}
+
+.form__checked {
+  display: none;
+}
+
+#personal:checked ~ label[for='personal'] {
+  color: orangered;
+}
+
+#business:checked + label[for='business'] {
+  color: orangered;
+}
+
 .form__input-field i {
-  margin-left: 10px;
+  margin: 0 10px;
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -62,6 +88,17 @@ body {
   outline: none;
 }
 
+.form__question textarea {
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  height: 150px;
+  width: 400px;
+  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
 .error-message {
   background: rgba(255, 255, 255, 0.6);
   margin-bottom: 10px;
@@ -69,6 +106,59 @@ body {
   padding: 5px;
   border-radius: 5px;
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#summary {
+  width: 100%;
+}
+.summary__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  height: 800px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.summary__title {
+  text-align: center;
+  color: #f37335;
+  font-weight: 200;
+  letter-spacing: 5px;
+  margin-top: 50px;
+}
+
+.summary__list {
+  list-style: none;
+  margin-top: 50px;
+}
+
+.summary__item {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 10px;
+  margin: 50px auto;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  max-width: 80%;
+  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.summary__item:last-child {
+  height: 150px;
+}
+
+.summary__item p {
+  text-align: center;
 }
 
 div.inactive {

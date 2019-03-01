@@ -16,48 +16,96 @@
   </head>
   <body>
     <form>
+      <span class="error-message"></span>
       <div class="form__question question-one">
-        <h3 class="form__question--title">Question 1, Hello</h3>
-        <span class="error-message"></span>
+        <h3 class="form__question--title">Type of Account</h3>
         <div class="form__input-field">
-          <input type="text" placeholder="Placeholder" required />
+          <input
+            class="form__checked"
+            type="radio"
+            name="type"
+            id="personal"
+            value="personal"
+          />
+          <label for="personal">Personal </label>
+          <input
+            class="form__checked"
+            type="radio"
+            name="type"
+            id="business"
+            value="business"
+          />
+          <label for="business">Business </label>
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
       <div class="form__question question-two  inactive">
         <h3 class="form__question--title">Here comes question Two !</h3>
-        <span class="error-message"></span>
+
         <div class="form__input-field">
-          <span class="error-message"></span>
-          <input type="text" placeholder="Placeholder" required />
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <input
+            type="text"
+            name="question2"
+            placeholder="Placeholder"
+            required
+          />
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
       <div class="form__question question-three inactive">
         <h3 class="form__question--title">Question Three, look at me !</h3>
-        <span class="error-message"></span>
+
         <div class="form__input-field">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+
           <input type="text" placeholder="Placeholder" required />
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
       <div class="form__question question-four inactive">
         <h3 class="form__question--title">Question Four, dab \o\</h3>
-        <span class="error-message"></span>
+
         <div class="form__input-field">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+
           <input type="text" placeholder="Placeholder" required />
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
       <div class="form__question question-three inactive">
         <h3 class="form__question--title">Question Five, we're done here</h3>
-        <span class="error-message"></span>
+
         <div class="form__input-field">
-          <input type="text" placeholder="Placeholder" required />
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+
+          <textarea placeholder="Placeholder" required></textarea>
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
     </form>
+
+    <section id="summary">
+      <!-- <div class="summary__container">
+        <h2 class="summary__title">Summary</h2>
+        <div class="summary__questions">
+          <ul class="summary__list">
+            <li class="summary__item">
+              <p>Im an answer to question 1</p>
+            </li>
+            <li class="summary__item">
+              <p>Im an answer to question 2</p>
+            </li>
+            <li class="summary__item">
+              <p>Im an answer to question 3</p>
+            </li>
+            <li class="summary__item">
+              <p>Im an answer to question 4</p>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+    </section>
 
     <script src="./script.js"></script>
   </body>
