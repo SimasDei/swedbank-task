@@ -12,11 +12,11 @@ var state = {
     answer: ''
   },
   question4: {
-    question: 'Something Something',
+    question: 'Question Title',
     answer: ''
   },
   question5: {
-    question: 'Comments',
+    question: 'Additional Information',
     answer: ''
   },
   errors: ''
@@ -103,13 +103,6 @@ function questionHandler() {
         default:
           break;
       }
-      // if (nextQuestion === null) {
-      //   state.question5.answer = input.value;
-      //   clearForm();
-      //   document.body.style.background =
-      //     'linear-gradient(to right, #fdc830, #f37335)';
-      //   renderAnswers(state);
-      // }
     });
   });
 
@@ -178,18 +171,23 @@ function renderAnswers(state) {
     <div class="summary__questions">
       <ul class="summary__list">
         <li class="summary__item">
+        <h4>${state.question1.question}</h4>
           <p>${state.question1.answer}</p>
         </li>
         <li class="summary__item">
+        <h4>${state.question2.question}</h4>
           <p>${state.question2.answer}</p>
         </li>
         <li class="summary__item">
+        <h4>${state.question3.question}</h4>
           <p>${state.question3.answer}</p>
         </li>
         <li class="summary__item">
+        <h4>${state.question4.question}</h4>
           <p>${state.question4.answer}</p>
         </li>
         <li class="summary__item">
+        <h4>${state.question5.question}</h4>
           <p>${state.question5.answer}</p>
         </li>
       </ul>
