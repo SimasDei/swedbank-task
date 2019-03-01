@@ -1,0 +1,23 @@
+{
+  "name": "swedbank-task",
+  "version": "1.0.0",
+  "description": "Swed Bank Task",
+  "main": "script.js",
+  "scripts": {
+    "deploy": "gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimasDei/swedbank-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimasDei/swedbank-task/issues"
+  },
+  "homepage": "https://simasdei.github.io/swedbank-task",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
