@@ -17,7 +17,7 @@
   <body>
     <form>
       <span class="error-message"></span>
-      <div class="form__question question-one">
+      <div class="form__question question-one checked">
         <h3 class="form__question--title">Type of Account</h3>
         <div class="form__input-field">
           <input
@@ -27,7 +27,7 @@
             id="personal"
             value="personal"
           />
-          <label for="personal">Personal </label>
+          <label for="personal">Personal</label>
           <input
             class="form__checked"
             type="radio"
@@ -35,18 +35,36 @@
             id="business"
             value="business"
           />
-          <label for="business">Business </label>
+          <label for="business">Business</label>
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
       <div class="form__question question-two  inactive">
-        <h3 class="form__question--title">Here comes question Two !</h3>
-
+        <h3 class="form__question--title">Category</h3>
+        <div class="form__input-field options">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <select name="question2" id="account-plan" required>
+            <!-- <option value="gold">Gold</option>
+            <option value="platinum">Platinum</option> -->
+          </select>
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+      <div class="form__question question-three inactive">
+        <h3 class="form__question--title">Name of Department</h3>
+        <div class="form__input-field">
+          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
+          <input name="question3" type="text" placeholder="e.g. IT" required />
+          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+        </div>
+      </div>
+      <div class="form__question question-four inactive">
+        <h3 class="form__question--title">Query Title</h3>
         <div class="form__input-field">
           <i class="far fa-arrow-alt-circle-left fa-3x"></i>
           <input
+            name="question4"
             type="text"
-            name="question2"
             placeholder="Placeholder"
             required
           />
@@ -54,58 +72,20 @@
         </div>
       </div>
       <div class="form__question question-three inactive">
-        <h3 class="form__question--title">Question Three, look at me !</h3>
-
-        <div class="form__input-field">
-          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
-
-          <input type="text" placeholder="Placeholder" required />
-          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
-        </div>
-      </div>
-      <div class="form__question question-four inactive">
-        <h3 class="form__question--title">Question Four, dab \o\</h3>
-
-        <div class="form__input-field">
-          <i class="far fa-arrow-alt-circle-left fa-3x"></i>
-
-          <input type="text" placeholder="Placeholder" required />
-          <i class="far fa-arrow-alt-circle-right fa-3x"></i>
-        </div>
-      </div>
-      <div class="form__question question-three inactive">
         <h3 class="form__question--title">Question Five, we're done here</h3>
-
         <div class="form__input-field">
           <i class="far fa-arrow-alt-circle-left fa-3x"></i>
-
-          <textarea placeholder="Placeholder" required></textarea>
+          <textarea
+            name="question5"
+            placeholder="Placeholder"
+            required
+          ></textarea>
           <i class="far fa-arrow-alt-circle-right fa-3x"></i>
         </div>
       </div>
     </form>
 
-    <section id="summary">
-      <!-- <div class="summary__container">
-        <h2 class="summary__title">Summary</h2>
-        <div class="summary__questions">
-          <ul class="summary__list">
-            <li class="summary__item">
-              <p>Im an answer to question 1</p>
-            </li>
-            <li class="summary__item">
-              <p>Im an answer to question 2</p>
-            </li>
-            <li class="summary__item">
-              <p>Im an answer to question 3</p>
-            </li>
-            <li class="summary__item">
-              <p>Im an answer to question 4</p>
-            </li>
-          </ul>
-        </div>
-      </div> -->
-    </section>
+    <section id="summary"></section>
 
     <script src="./script.js"></script>
   </body>

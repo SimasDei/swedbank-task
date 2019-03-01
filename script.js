@@ -4,11 +4,11 @@ var state = {
     answer: ''
   },
   question2: {
-    question: 'Select a Region',
+    question: 'Category',
     answer: ''
   },
   question3: {
-    question: 'Type of Service',
+    question: 'Name of Department',
     answer: ''
   },
   question4: {
@@ -28,7 +28,8 @@ const elements = {
   form: document.querySelector('form'),
   summary: document.querySelector('#summary'),
   personal: document.querySelector('#personal'),
-  business: document.querySelector('#business')
+  business: document.querySelector('#business'),
+  options: document.querySelector('#account-plan')
 };
 
 function questionHandler() {
@@ -39,32 +40,65 @@ function questionHandler() {
       const parent = element.parentElement.parentElement;
       const input = element.previousElementSibling;
       const nextQuestion = parent.nextElementSibling;
+      const personal = elements.personal;
+      const business = elements.business;
+      console.log(parent);
 
-      switch (elements.personal.checked) {
-        case true:
-          state.question1.answer = elements.personal.value;
-          if (state.errors === '') {
+      if (parent.classList.contains('checked')) {
+        switch (true) {
+          case personal.checked:
+            state.question1.answer = '';
+            state.question1.answer = elements.personal.value;
+            renderOptions();
             nextForm(parent, nextQuestion);
-          }
-          break;
-        case false:
-          state.question1.answer = elements.business.value;
-          if (state.errors === '') {
+            break;
+          case business.checked:
+            state.question1.answer = '';
+            state.question1.answer = elements.business.value;
+            renderOptions();
             nextForm(parent, nextQuestion);
-          }
-          break;
-        default:
-          break;
+            break;
+          default:
+            return;
+        }
       }
 
       switch (input.name) {
         case 'question2':
-          validateForm(input);
-          if (state.errors === '') {
-            state.question2.answer = input.value;
+          state.question2.answer = input.value;
+          nextForm(parent, nextQuestion);
+          state.errors = '';
+
+          break;
+        case 'question3':
+          if (validateForm(input)) {
+            state.question3.answer = input.value;
             nextForm(parent, nextQuestion);
             state.errors = '';
+          } else {
+            return;
           }
+          break;
+        case 'question4':
+          if (validateForm(input)) {
+            state.question4.answer = input.value;
+            nextForm(parent, nextQuestion);
+            state.errors = '';
+          } else {
+            return;
+          }
+          break;
+        case 'question5':
+          if (validateForm(input)) {
+            state.question5.answer = input.value;
+            clearForm();
+            state.errors = '';
+          } else {
+            return;
+          }
+          document.body.style.background =
+            'linear-gradient(to right, #fdc830, #f37335)';
+          renderAnswers(state);
           break;
         default:
           break;
@@ -89,15 +123,19 @@ function questionHandler() {
 }
 
 function nextForm(parent, nextQuestion) {
-  parent.classList.add('inactive');
-  parent.classList.remove('active');
-  nextQuestion.classList.add('active');
+  if (nextQuestion) {
+    parent.classList.add('inactive');
+    parent.classList.remove('active');
+    nextQuestion.classList.add('active');
+  }
 }
 
 function previousForm(parent, prevQuestion) {
   parent.classList.add('inactive');
   parent.classList.remove('active');
   prevQuestion.classList.add('active');
+  state.errors = '';
+  error(false, '');
 }
 
 function clearForm() {
@@ -105,8 +143,12 @@ function clearForm() {
 }
 
 function validateForm(input) {
-  if (input.value.length < 3) {
-    error(true, 'not enough characters');
+  if (input.value.length === 0) {
+    error(true, "Field can't be empty");
+  } else if (input.value.length > 200) {
+    error(true, 'Too many characters');
+  } else if (input.value.length <= 3) {
+    error(true, 'Not enough characters');
   } else {
     error(false);
     return true;
@@ -136,13 +178,13 @@ function renderAnswers(state) {
     <div class="summary__questions">
       <ul class="summary__list">
         <li class="summary__item">
-          <p>${state.question1.answer}}</p>
+          <p>${state.question1.answer}</p>
         </li>
         <li class="summary__item">
           <p>${state.question2.answer}</p>
         </li>
         <li class="summary__item">
-          <p>$${state.question3.answer}</p>
+          <p>${state.question3.answer}</p>
         </li>
         <li class="summary__item">
           <p>${state.question4.answer}</p>
@@ -155,6 +197,30 @@ function renderAnswers(state) {
   </div>
   `;
   elements.summary.insertAdjacentHTML('afterbegin', markup);
+}
+
+function renderOptions() {
+  let markup;
+  switch (state.question1.answer) {
+    case 'personal':
+      markup = `
+     <option value="basic">Basic</option>
+     <option value="express">Express</option>
+     `;
+      break;
+    case 'business':
+      markup = `
+    <option value="gold">Gold</option>
+     <option value="platinum">Platinum</option>
+    `;
+      break;
+    case '':
+      markup = '';
+    default:
+      break;
+  }
+  elements.options.innerHTML = '';
+  elements.options.insertAdjacentHTML('afterbegin', markup);
 }
 
 questionHandler();
